@@ -34,13 +34,21 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env']
+            presets: [
+              '@babel/preset-env',
+              ['@babel/preset-typescript', { allExtensions: true, isTSX: true }]
+            ]
           }
         }
       },
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
+      },
+      // Ajout de la règle pour les fichiers SVG
+      {
+        test: /\.svg$/,
+        type: 'asset/inline'
       }
     ]
   },

@@ -1,8 +1,16 @@
+// fichier: efreiflix-shell/src/App.js
 import React, { Suspense } from 'react';
+import VueWrapper from './VueWrapper.jsx';
 
 const Header = React.lazy(() => import('header/Header'));
 const Skeleton = React.lazy(() => import('skeleton/Skeleton'));
-const Breadcrumb = React.lazy(() => import('breadcrumb/Breadcrumb'));
+
+// Import direct du composant Vue Breadcrumb
+import BreadcrumbVue from 'breadcrumb/Breadcrumb';
+
+const Breadcrumb = (props) => (
+  <VueWrapper component={BreadcrumbVue} componentProps={props} />
+);
 
 const App = () => {
   return (
