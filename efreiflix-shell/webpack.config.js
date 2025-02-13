@@ -42,7 +42,8 @@ module.exports = {
         // Déclaration du micro-frontend Header
         // Format: "nom_remote@url/fichier_entree.js"
         header: 'header@http://localhost:3001/remoteEntry.js', // Configuration pour consommer le MFE 'header'
-        skeleton: 'skeleton@http://localhost:3002/remoteEntry.js'
+        skeleton: 'skeleton@http://localhost:3002/remoteEntry.js',
+        breadcrumb: 'breadcrumb@http://localhost:5000/remoteEntry.js'
       },
 
       shared: {
