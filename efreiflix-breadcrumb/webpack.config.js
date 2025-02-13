@@ -1,7 +1,7 @@
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 const path = require('path');
 const { dependencies } = require('./package.json');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { VueLoaderPlugin } = require('vue-loader');
 
 module.exports = {
   entry: './src/main.ts',
@@ -24,18 +24,23 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.vue$/,
+        loader: 'vue-loader',
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.(js|jsx|ts|tsx)$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-react', '@babel/preset-env']
+            presets: ['@babel/preset-env']
           }
         }
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader', 'postcss-loader'],
+        use: ['style-loader', 'css-loader'],
       }
     ]
   },
@@ -44,7 +49,7 @@ module.exports = {
       name: 'breadcrumb',
       filename: 'remoteEntry.js',
       exposes: {
-        './Breadcrumb': './src/App.vue',
+        './Breadcrumb': './src/Breadcrumb.vue',
       },
       shared: {
         vue: {
@@ -54,11 +59,9 @@ module.exports = {
         },
       },
     }),
-    new HtmlWebpackPlugin({
-      template: './public/index.html',
-    }),
+    new VueLoaderPlugin(),
   ],
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.vue']
   },
 };

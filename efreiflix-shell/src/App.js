@@ -2,6 +2,7 @@ import React, { Suspense } from 'react';
 
 const Header = React.lazy(() => import('header/Header'));
 const Skeleton = React.lazy(() => import('skeleton/Skeleton'));
+const Breadcrumb = React.lazy(() => import('breadcrumb/Breadcrumb'));
 
 const App = () => {
   return (
@@ -16,6 +17,10 @@ const App = () => {
         
         <Suspense fallback={<div>Chargement du skeleton...</div>}>
           <Skeleton />
+        </Suspense>
+
+        <Suspense fallback={<div>Chargement du breadcrumb...</div>}>
+          <Breadcrumb />
         </Suspense>
       </main>
     </div>
