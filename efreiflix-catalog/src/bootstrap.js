@@ -1,10 +1,10 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import Skeleton from './Skeleton';
+import Catalog from './Catalog';
 
 const mount = (el) => {
   const root = createRoot(el);
-  root.render(<Skeleton />);
+  root.render(<Catalog />);
   return root;
 };
 

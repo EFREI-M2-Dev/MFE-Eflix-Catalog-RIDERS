@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
 
 const Header = React.lazy(() => import('header/Header'));
-const Skeleton = React.lazy(() => import('skeleton/Skeleton'));
+const Catalog = React.lazy(() => import('catalog/Catalog'));
 
 const App = () => {
   return (
@@ -15,7 +15,7 @@ const App = () => {
         <p>Contenu principal de l'application...</p>
         
         <Suspense fallback={<div>Chargement du skeleton...</div>}>
-          <Skeleton />
+          <Catalog />
         </Suspense>
       </main>
     </div>
