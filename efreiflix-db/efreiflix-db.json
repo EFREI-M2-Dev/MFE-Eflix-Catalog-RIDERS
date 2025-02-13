@@ -6,7 +6,7 @@
       "year": 1999,
       "genres": ["Action", "Sci-Fi"],
       "description": "Un hacker découvre la vérité sur sa réalité et son rôle dans la guerre contre ses contrôleurs.",
-      "posterUrl": "https://example.com/posters/matrix.jpg",
+      "posterUrl": "https://fr.web.img6.acsta.net/medias/04/34/49/043449_af.jpg",
       "trailerUrl": "https://www.youtube.com/embed/vKQi3bBA1y8",
       "rating": 4.5
     },
@@ -87,7 +87,7 @@
       "name": "Alice",
       "bio": "Étudiante passionnée de ciné",
       "email": "Alice@1.net",
-       "profiles": [
+      "profiles": [
         {
           "id": 1,
           "name": "Alice",
