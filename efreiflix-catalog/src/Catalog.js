@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import './styles.css';
 import { fetchData } from '../service/catalog';
 import MovieCard from './components/MovieCard';
+import { Swiper } from 'swiper/react';
+import 'swiper/css';
 
 const Catalog = () => {
   const [data, setData] = useState(null);
@@ -22,13 +24,17 @@ const Catalog = () => {
   if (!data) return <div>Loading...</div>;
 
   return (
-    <div className="grid grid-cols-6 gap-4">
+    <Swiper
+      spaceBetween={20}
+      slidesPerView={3}
+      onSlideChange={() => console.log('slide change')}
+      onSwiper={(swiper) => console.log(swiper)}
+      navigation
+    >
       {data.map((movie) => {
-        return (
-          <MovieCard key={movie.id} movie={movie} />
-        );
+        return <MovieCard key={movie.id} movie={movie} />;
       })}
-    </div>
+    </Swiper>
   );
 };
 
