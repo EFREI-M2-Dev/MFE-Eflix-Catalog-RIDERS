@@ -1,11 +1,10 @@
 import React from 'react';
 import StarRating from './StarRating';
 import Tag from './Tag';
-import { SwiperSlide } from 'swiper/react';
 
 const MovieCard = ({ movie }) => {
   return (
-    <SwiperSlide className="group hover:scale-[1.02] duration-200 rounded-md group flex flex-col gap-1 justify-center cursor-pointer">
+    <div className="w-full min-w-[270px] max-w-[270px] group hover:scale-[1.02] duration-200 rounded-md group flex flex-col gap-1 justify-center cursor-pointer">
       <div className="relative flex items-center justify-center w-full aspect-video">
         <div className="rounded-t-md hidden group-hover:flex flex-col absolute top-0 items-center justify-center left-0 bg-gray-900 text-white h-full w-full bg-opacity-50">
           <div>
@@ -28,7 +27,7 @@ const MovieCard = ({ movie }) => {
           style={{ backgroundImage: `url(${movie.posterUrl})` }}
         ></div>
       </div>
-    </SwiperSlide>
+    </div>
   );
 };
 
