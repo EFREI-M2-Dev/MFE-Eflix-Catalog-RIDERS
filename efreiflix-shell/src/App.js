@@ -19,6 +19,10 @@ const App = () => {
         <Header />
       </Suspense>
 
+      <Suspense fallback={<div>Chargement du breadcrumb...</div>}>
+        <Breadcrumb />
+      </Suspense>
+
       <main style={{ padding: '2rem' }}>
         <h2>Bienvenue sur Efreiflix</h2>
         <p>Contenu principal de l'application...</p>
@@ -27,9 +31,6 @@ const App = () => {
           <Skeleton />
         </Suspense>
 
-        <Suspense fallback={<div>Chargement du breadcrumb...</div>}>
-          <Breadcrumb />
-        </Suspense>
       </main>
     </div>
   );
